@@ -74,4 +74,20 @@ public class JsonComparison {
     }
 
 
+     @Test
+    void AAAAA()  {
+        String json2 = "{\"id\": 1, \"name\": \"Alice John\", \"timestamp\": \"2023-10-26T15:30:00Z\", \"city\": \"London\"}";
+       // Customization customization = new Customization("name", (actual, expected) -> actual.toString().contains(expected.toString()));
+       // JSONAssert.assertEquals("{\"name\":\"Al\"}", json2, new CustomComparator(JSONCompareMode.LENIENT, customization));
+        System.out.println(json2);
+
+        JSONObject obj = new JSONObject(json2);
+
+        assertTrue(obj.optString("name").contains("ohn"),"They dont match");
+        assertTrue(obj.optString("lala").isEmpty(),"They dont match");
+
+    }
+
+
+
 }
