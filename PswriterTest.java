@@ -22,7 +22,7 @@ public class PswriterTest {
 
     @Test
         //Minimalistic
-    void publish() throws Exception {
+    void publish111() throws Exception {
 
 
         System.out.println(
@@ -98,3 +98,4 @@ public class PswriterTest {
 
 
 }
+
