@@ -81,6 +81,20 @@ public class PswriterTest {
     }
 
 
+        @Test
+    void PublishToPubSubWorking111() throws Exception {
+        Random random = new Random();
+        ProjectTopicName topic = ProjectTopicName.of("pure-loop-417711", "john-topic");
+       // ProjectTopicName topic = ProjectTopicName.of("charming-hearth-4171116", "john-topic");
+        String payload = "IMS Amma " + random.nextInt(900);
+        PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(payload)).build();
+        ApiFuture<String> messageIdFuture = Publisher.newBuilder(topic).build().publish(pubsubMessage);
+        System.out.println(messageIdFuture.get());
+
+    }
+
+
+
 
 
 }
