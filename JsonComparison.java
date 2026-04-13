@@ -36,6 +36,7 @@ public class JsonComparison {
             ((com.fasterxml.jackson.databind.node.ObjectNode) node2).remove(field);
         }
 
+        System.out.println("haha");
         return node1.equals(node2);
     }
 
